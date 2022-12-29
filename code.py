@@ -4,8 +4,8 @@ import numpy as np
 import seaborn as sns
 from sklearn.metrics import r2_score
 
-train=pd.read_csv(r"C:\Users\Monisha\Desktop\1.Black friday sales prediction\train.csv")
-test_data=pd.read_csv(r"C:\Users\Monisha\Desktop\1.Black friday sales prediction\test.csv")
+train=pd.read_csv(r"train.csv")
+test_data=pd.read_csv(r"test.csv")
 
 train.head()
 test_data.head()
@@ -125,7 +125,7 @@ coef.plot(kind='bar', title='Model Coefficients')
 
 pred = model.predict(x_test)
 pred
-submission=pd.read_csv(r"C:\Users\Monisha\Desktop\1.Black friday sales prediction\sample_submission_V9Inaty.csv")
+submission=pd.read_csv(r"sample_submission.csv")
 predict=model.predict(test_data)
 submission['Purchase'] = predict
 submission.to_csv('Black friday sales prediction sample.csv', index=False)
